@@ -12,7 +12,7 @@ class ScoreHelper {
             List<String> dealtCards = player.getDealtCards();
             if (dealtCards.size() > 3)
                 player.setScore(player.getScore() + getLastDealtCardScore(dealtCards));
-            if (isDealtCardsTriplet(dealtCards))
+            else if (isDealtCardsTriplet(dealtCards))
                 player.setScore(calculateTripletScore(dealtCards));
             else if (isDealtCardsInSequence(dealtCards))
                 player.setScore(calculateSequenceScore(dealtCards));
@@ -37,7 +37,7 @@ class ScoreHelper {
         return playersWithHighestScore;
     }
 
-    private static int getLastDealtCardScore(List<String> dealtCards) {
+    static int getLastDealtCardScore(List<String> dealtCards) {
         return getCardValue(dealtCards.get(dealtCards.size()-1));
     }
 

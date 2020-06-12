@@ -10,8 +10,7 @@ import java.util.stream.Collectors;
 public class GameHelper {
 
     public static void simulateGame(Game game) {
-        List<Player> players = isGameClashed(game) ?
-                getClashedPlayers(game) : game.getPlayers();
+        List<Player> players = isGameClashed(game) ? getClashedPlayers(game) : game.getPlayers();
         ScoreHelper.calculateScoresOfPlayers(players);
         List<Player> playersWithHighestScore = ScoreHelper.getPlayersWithHighestScore(players);
         if (playersWithHighestScore.size() == 1)

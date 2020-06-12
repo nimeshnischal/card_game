@@ -11,6 +11,19 @@ import static org.junit.Assert.*;
 public class ScoreHelperTests {
 
     @Test
+    public void testGetLastDealtCardScore() {
+        List<String> dealtCards = Arrays.asList("2", "2", "2", "A");
+        int lastDealtCardScore = ScoreHelper.getLastDealtCardScore(dealtCards);
+        assertEquals(lastDealtCardScore, 14);
+        dealtCards = Arrays.asList("K", "J", "10", "9");
+        lastDealtCardScore = ScoreHelper.getLastDealtCardScore(dealtCards);
+        assertEquals(lastDealtCardScore, 9);
+        dealtCards = Arrays.asList("4", "2", "K", "5");
+        lastDealtCardScore = ScoreHelper.getLastDealtCardScore(dealtCards);
+        assertEquals(lastDealtCardScore, 5);
+    }
+
+    @Test
     public void testIsDealtCardsTriplet() {
         List<String> dealtCards = Arrays.asList("2", "2", "2");
         boolean isTriplet = ScoreHelper.isDealtCardsTriplet(dealtCards);

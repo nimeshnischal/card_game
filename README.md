@@ -18,7 +18,7 @@ A backend service for a simple card game of 4 players.
 ## Usage
 To play the game, just hit the api:
 ```
-localhost:9191/game/new
+[GET] localhost:9191/game/new
 ```
 Response:
 ```
