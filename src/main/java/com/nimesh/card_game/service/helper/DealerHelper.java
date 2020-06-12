@@ -22,7 +22,6 @@ public class DealerHelper {
     static void dealCardToPlayer(Player player, List<Integer> dealtCardsIndexes) {
         int dealtCardIndex = dealCardWithIndexNotIn(dealtCardsIndexes);
         dealtCardsIndexes.add(dealtCardIndex);
-        player.getDealtCardsIndexes().add(dealtCardIndex);
         player.getDealtCards().add(cardIndexToCardValue(dealtCardIndex));
     }
 

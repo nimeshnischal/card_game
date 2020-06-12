@@ -15,6 +15,33 @@ A backend service for a simple card game of 4 players.
     * the player with the highest value card dealt in previous step wins
     * if a tie arises again, repeat above steps
 
+## Usage
+To play the game, just hit the api:
+```
+localhost:9191/game/new
+```
+Response:
+```
+{
+    "players": [
+        {
+            "dealt_cards": ["K","5","4"]
+        },
+        {
+            "dealt_cards": ["10","7","9"]
+        },
+        {
+            "dealt_cards": ["7","Q","2"]
+        },
+        {
+            "dealt_cards": ["10","Q","9"]
+        }
+    ],
+    "winner_player_index": 0
+}
+```
+"winner_player_index" denotes which player won the game.  
+Clearly, the above game was won by player no. 1 at index 0 as he has the top card 'K'
 
 ## Built With
 * Spring boot

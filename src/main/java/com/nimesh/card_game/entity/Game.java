@@ -10,8 +10,6 @@ import java.util.List;
 public class Game {
     private List<Player> players;
     private Integer winnerPlayerIndex;
-    // TODO: write test case to check serialized json doesnt have this
-    // https://www.baeldung.com/jackson-field-serializable-deserializable-or-not
     @JsonIgnore
     private List<Integer> dealtCardIndexes;
 
